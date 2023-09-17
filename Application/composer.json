@@ -1,0 +1,6 @@
+{
+    "require": {
+        "phpmailer/phpmailer": "^6.5",
+        "sandromiguel/verum-php": "^2.0"
+    }
+}

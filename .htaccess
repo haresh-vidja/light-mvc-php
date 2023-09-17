@@ -1,0 +1,9 @@
+Options FollowSymLinks
+ErrorDocument 404 /404
+
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+    RewriteCond %{REQUEST_URI} !^/blog/
+    RewriteRule ^$ Static/ [L]
+    RewriteRule (.*) Static/$1 [L]
+</IfModule>

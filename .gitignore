@@ -1,0 +1,14 @@
+Application/Config/Config.php
+Application/composer.lock
+Application/vendor
+!Application/Temp
+Application/Temp/*
+!/Static/uploads/index.html
+/Static/uploads/*
+!Application/Temp/Cache
+Application/Temp/Cache/*
+!Application/Temp/Logs
+Application/Temp/Logs/*
+/Static/uploads
+
+
