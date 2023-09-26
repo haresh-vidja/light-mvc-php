@@ -26,7 +26,6 @@
  * - No CLI usage. Use run.php for command-line operations.
  * ============================================================================
  */
-
 // -----------------------------------------------------------------------------
 // Define directory separator (cross-platform support)
 define("DS", DIRECTORY_SEPARATOR);

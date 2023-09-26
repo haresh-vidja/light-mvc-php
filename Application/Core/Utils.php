@@ -176,6 +176,71 @@ class Utils
     {
         return ucfirst(str_replace(' ', '', ucwords(preg_replace('/[^a-zA-Z0-9\x7f-\xff]+/', ' ', $string))));
     }
+
+    /**
+     * Returns the full URL of an image resource with a version string appended.
+     *
+     * @param string $imagePath Relative path of the image.
+     * @return string Full image URL with version query parameter.
+     */
+    static function getImageURL($imagePath) {
+        // Concatenate base image path with relative image path and version string
+        return Config::get("resources.image") . $imagePath . self::getVersionString();
+    }
+
+    /**
+     * Returns the full URL of a JavaScript resource with a version string appended.
+     *
+     * @param string $jsPath Relative path of the JavaScript file.
+     * @return string Full JavaScript URL with version query parameter.
+     */
+    static function getJsURL($jsPath) {
+        // Concatenate base JS path with relative path and version string
+        return Config::get("resources.js") . $jsPath . self::getVersionString();
+    }
+
+    /**
+     * Returns the full URL of a CSS resource with a version string appended.
+     *
+     * @param string $cssPath Relative path of the CSS file.
+     * @return string Full CSS URL with version query parameter.
+     */
+    static function getCssURL($cssPath) {
+        // Concatenate base CSS path with relative path and version string
+        return Config::get("resources.css") . $cssPath . self::getVersionString();
+    }
+
+    /**
+     * Returns the full URL of a favicon resource with a version string appended.
+     *
+     * @param string $cssPath Relative path of the favicon.
+     * @return string Full favicon URL with version query parameter.
+     */
+    static function getFaviconURL($cssPath) {
+        // Concatenate base favicon path with relative path and version string
+        return Config::get("resources.favicon") . $cssPath . self::getVersionString();
+    }
+
+    /**
+     * Generates a version query string for cache-busting (e.g., ?ver=abc123).
+     * This helps force browsers to reload updated files.
+     * 
+     * The version key is expected to be defined in environment or config settings.
+     * If no version key is set, an empty string is returned (no query parameter added).
+     *
+     * @return string Version query string, e.g., "?ver=abc123"
+     */
+    static function getVersionString() {
+        $versionString = '';
+
+        // Fetch the version key from configuration (e.g., cache key)
+        if (Config::get('cache.key', '') != '') {
+            $versionString = '?ver=' . Config::get('cache.key');
+        }
+
+        return $versionString;
+    }
+
 }
 
 /**

@@ -1,4 +1,5 @@
-<!-- 
+<?php
+/*
 ==============================================================
 PARTIAL: MENU / NAVIGATION
 --------------------------------------------------------------
@@ -19,7 +20,8 @@ Use the above PHP code wherever you want the navigation to appear,
 
 Keep only navigation-related HTML here. Avoid page-specific logic.
 ==============================================================
--->
+*/
+?>
 
 <nav>
   <ul>

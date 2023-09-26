@@ -1,5 +1,4 @@
 <?php
-
 // Import the HTTP handler class
 use Core\Http;
 

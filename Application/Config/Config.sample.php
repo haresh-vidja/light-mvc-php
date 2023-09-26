@@ -9,6 +9,19 @@ return [
 	"siteUrl" => "<your website url>",
 
 	/**
+	 * STATIC RESOURCE
+	 * Set Full URL or Path for image, javascript, css and favicon.
+	 * Example: "/images/" or "http://yoursite.com/images/" or "http://image.othersite.com/"
+	 */
+	"resources" => [
+		"image" => '/images/',
+		"js" => '/js/',
+		"css" => '/css/',
+		"favicon" => '/favicon/'
+	],
+
+
+	/**
 	 * BLOG URL
 	 * URL of your WordPress blog for fetching RSS feeds.
 	 * Example: "http://yoursite.com/blog/"
